@@ -91,6 +91,7 @@ public class Hero : MonoBehaviour {
         if(enemy != null)
         {
             shieldLevel--;
+            speed -= 10;
             Destroy(go);
         }
         else if (pUp != null)
@@ -111,6 +112,10 @@ public class Hero : MonoBehaviour {
         {
             case eWeaponType.shield:
                 shieldLevel++;
+                speed += 10;
+                if(speed > 75) {
+                    speed -= 10;
+                }
                 break;
 
             default:
